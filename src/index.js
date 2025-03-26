@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const characterBar = document.getElementById("character-bar");
     const characterName = document.getElementById("name");
@@ -7,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteInput = document.getElementById("votes");
     const resetButton = document.getElementById("reset-btn");
     const characterForm = document.getElementById("character-form");
-    const nameInput = document.getElementById("new-character-name");
-    const imageInput = document.getElementById("new-character-image");
+    const nameInput = document.getElementById("character-name");
+    console.log("nameInput", nameInput);
+    const imageInput = document.getElementById("character-image-url");
     let currentCharacter = null;
 
     
@@ -69,8 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     characterForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        const name = nameInput.value.trim();
+        const name = nameInput.value.trim()
+        console.log(name);
+
         const image = imageInput.value.trim();
+        console.log(image)
 
         if (name && image) {
             const newCharacter = { name, image, votes: 0 };
